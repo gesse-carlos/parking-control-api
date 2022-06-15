@@ -14,8 +14,8 @@ services:
     container_name: pgadmin_local
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: emailteste@email.com
-      PGADMIN_DEFAULT_PASSWORD: passwordteste
+      PGADMIN_DEFAULT_EMAIL: parkingcontrol@admin.com
+      PGADMIN_DEFAULT_PASSWORD: parkingcontrol
     ports:
       - "54321:80"
     depends_on:
