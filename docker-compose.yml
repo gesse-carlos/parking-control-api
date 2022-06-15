@@ -1,0 +1,34 @@
+services:
+  postgres:
+    container_name: postgres_local
+    image: postgres:alpine
+    ports:
+      - "12345:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: xww908b
+    networks:
+      - postgres-compose-network
+
+  pgadmin:
+    container_name: pgadmin_local
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: emailteste@email.com
+      PGADMIN_DEFAULT_PASSWORD: passwordteste
+    ports:
+      - "54321:80"
+    depends_on:
+      - postgres
+    networks:
+      - postgres-compose-network
+
+  redis:
+    container_name: redis_local
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+networks:
+    postgres-compose-network:
+      driver: bridge
