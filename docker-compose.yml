@@ -23,12 +23,6 @@ services:
     networks:
       - postgres-compose-network
 
-  redis:
-    container_name: redis_local
-    image: redis:latest
-    ports:
-      - "6379:6379"
-
 networks:
     postgres-compose-network:
       driver: bridge
